@@ -1,0 +1,33 @@
+body {
+    background-image: url(img/cine.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    color: aliceblue;
+    padding: 5px;
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: black;
+}
+
+#puntajeUser{
+    text-align: center;
+}
+
+.texto{
+    text-align: center;
+}
+
+.form-control{
+    width: 50%;
+    margin-left: 25%;
+}
+
+#anotherFilm{
+    margin-left: 40%;
+}
