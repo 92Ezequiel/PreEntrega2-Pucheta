@@ -8,20 +8,21 @@
 
 //se crea un class constructor para establecer objetos y pasarlos a arryas
 class Peliculas {
-    constructor (id, titulo, director){
+    constructor (id, titulo, director, img){
         this.id = id,
         this.titulo = titulo,
-        this.director = director
+        this.director = director,
+        this.img = img,
         this.puntaje = []
     }
 }
 
 
-const pelicula1 = new Peliculas(1, "Boogeyman", "Rob Savage");
-const pelicula2 = new Peliculas(2, "La Sirenita", "Rob Marshall");
-const pelicula3 = new Peliculas(3, "Elementos", "Peter Sohn");
-const pelicula4 = new Peliculas(4, "Flash", "Andy Muschietti");
-const pelicula5 = new Peliculas(5, "Spiderman a traves del Spiderverso", "Joaquim Dos Santos");
+const pelicula1 = new Peliculas(1, "Boogeyman", "Rob Savage", "https://cloudfront-us-east-1.images.arcpublishing.com/infobae/WMG2F7CNTVAKXGKHRVTSRKUT7M.jpg");
+const pelicula2 = new Peliculas(2, "La Sirenita", "Rob Marshall", "https://es.web.img3.acsta.net/pictures/23/03/14/15/12/2449709.jpg");
+const pelicula3 = new Peliculas(3, "Elementos", "Peter Sohn", "https://i.blogs.es/44baa6/elemental_poster/450_1000.jpeg");
+const pelicula4 = new Peliculas(4, "Flash", "Andy Muschietti", "https://pics.filmaffinity.com/Flash-205686824-large.jpg");
+const pelicula5 = new Peliculas(5, "Spiderman a traves del Spiderverso", "Joaquim Dos Santos", "https://m.media-amazon.com/images/M/MV5BNzQ1ODUzYjktMzRiMS00ODNiLWI4NzQtOTRiN2VlNTNmODFjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg");
 
 const PELICULA = [pelicula1, pelicula2, pelicula3, pelicula4, pelicula5]
 
@@ -38,8 +39,8 @@ function renderizarPeliculas(estrenos){
     let divCard = document.createElement("div")
     divCard.id = pelicula.id
     divCard.innerHTML= `
-    <div class="card" style="width: 18rem;">
-      <img src="https://www.vhv.rs/file/max/17/176106_rollo-de-pelicula-png.png" class="card-img-top" alt="">
+    <div class="card" style="width: 18rem; ">
+      <img src="${pelicula.img}" class="card-img-top" alt="">
       <div class="card-body">
         <h5 class="card-title">${pelicula.titulo}</h5>
         <p class="card-text">Dirigida por ${pelicula.director}</p>

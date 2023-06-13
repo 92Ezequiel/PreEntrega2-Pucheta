@@ -15,6 +15,10 @@ body {
     color: black;
 }
 
+.card{
+    margin-top: 15px;
+}
+
 #puntajeUser{
     text-align: center;
 }
