@@ -3,9 +3,10 @@
 -el usuario elige una pelicula
 -se individualiza la pelicula
 -se calificican los distintos parametros
--reduce para llegar a un promedio []
+-reduce para llegar a un promedio 
 -reseña y recomendacion */
 
+//se crea un class constructor para establecer objetos y pasarlos a arryas
 class Peliculas {
     constructor (id, titulo, director){
         this.id = id,
@@ -30,7 +31,7 @@ function lockStorage (clave, valor){
     localStorage.setItem(clave, valor)
 }
 
-
+//funcion para crear cards a partir del array 
 function renderizarPeliculas(estrenos){
    const cards = document.getElementById("cards")
    estrenos.forEach((pelicula => {
@@ -51,10 +52,7 @@ function renderizarPeliculas(estrenos){
 })) 
 }
 
-
-
-
-
+//funcion que califica las peliculas
 function calificar(idPelicula){
     let calificarPelicula = peliculasLS.find(e => e.id == idPelicula)
     if (calificarPelicula.puntaje.length == 3){return puntajeFinal(calificarPelicula, divPuntaje)}
@@ -86,6 +84,8 @@ function calificar(idPelicula){
         lockStorage ("peliculas", JSON.stringify(peliculasLS))
     })
 }
+
+//a partir de un reduce y una funcion math.round obtenemos el promedio 
 function puntajeFinal(peliculas, div){
      let sumaCalificacion = peliculas.puntaje.reduce((acum, e) => acum + e, 0)
      let promedioPuntaje = Math.round(sumaCalificacion / 3)
@@ -126,42 +126,3 @@ if (!peliculasLS){
 }
 renderizarPeliculas(peliculasLS)
 
-
-
-
-
-/*const cards = document.getElementById("cards");
-const PELICULAS = [
-    {nombre: "Boogeyman", director: "Rob Savage", url: "https://static.cinemarkhoyts.com.ar/Images/Posters/5a77b7bc5f310e0113ec6bd906579001.jpg?v=00002131"},
-    {nombre: "Elementos", director:"Peter Sohn", url: "https://static.cinemarkhoyts.com.ar/Images/Posters/6aa4601e49a56d928205c271b55fd463.jpg?v=00002131"},
-    {nombre: 'Flash', director: 'Andy Muschietti', url: "https://static.cinemarkhoyts.com.ar/Images/Posters/227b519e83a8b99329302ad2d37d0bbb.jpg?v=00002131"},
-    {nombre: 'Spiderman across the Spiderverse', director: 'Joaquim Dos Santos', url: "https://static.cinemarkhoyts.com.ar/Images/Posters/483c1800ed15083a602307931c1d86b7.jpg?v=00002131"},
-    {nombre: 'La Sirenita', director: 'Rob Marshall', url: "https://static.cinemarkhoyts.com.ar/Images/Posters/fcb985a11f362bc8c05a89788fb5ac5c.jpg?v=00002131"}
-]
-const createCards = (pelicula) => {
-    const container = document.createElement("div")
-    container.classList.add("card")
-
-    const imagen = document.createElement("img")
-    imagen.src = PELICULAS.url
-
-    const nombre = document.createElement("h2")
-    nombre.innerText = PELICULAS.nombre
-
-    const direccion = document.createElement("p")
-    direccion.innerText = PELICULAS.director
-
-    container.appendChild(imagen)
-    container.appendChild(nombre)
-    container.appendChild(direccion)
-
-    return container
-}
-
-const cardFilm = (film) =>{
-    const card = film.map ((pelicula) => {return createCards(pelicula)})
-    console.log(card)
-    cards.append(...card)
-}
-
-cardFilm (PELICULAS)*/
