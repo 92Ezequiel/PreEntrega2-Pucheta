@@ -17,6 +17,27 @@ body {
 
 .card{
     margin-top: 15px;
+    height: 600px;
+}
+.cardPuntaje{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.cardResena{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.formResena{
+    display: block;
+}
+#puntajeUser{
+    padding-top: 30px;
+}
+.card-body{
+    color: black;
 }
 
 #puntajeUser{
@@ -25,6 +46,7 @@ body {
 
 .texto{
     text-align: center;
+    margin-top: 20px;
 }
 
 .form-control{
@@ -33,5 +55,28 @@ body {
 }
 
 #anotherFilm{
-    margin-left: 40%;
+    margin-left: 25%;
+}
+
+.ficha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cardFicha{
+    color: black;
+}
+
+.review{
+    width: 700px;
+    padding-top: 20px;
+    text-shadow: 10 black;
+}
+
+#fichabtn{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 20px;
 }
